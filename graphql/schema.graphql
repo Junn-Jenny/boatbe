@@ -18,6 +18,7 @@ type Boat {
     boat: String,
     image: String,
     description: String,
+    price: Int,
     features: [BoatFeature] @hasMany
 
 }
