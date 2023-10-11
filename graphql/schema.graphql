@@ -1,0 +1,29 @@
+type Query {
+  users: [User]! @paginate
+  user(id: ID @eq): User @find
+
+  boats: [Boat!]! @paginate
+  boat(id: ID @eq): Boat @find
+
+  boat_features: [BoatFeature!]! @all
+}
+
+type User {
+  id: ID,
+  name: String
+}
+
+type Boat {
+    id: ID,
+    boat: String,
+    image: String,
+    description: String,
+    features: [BoatFeature] @hasMany
+
+}
+
+type BoatFeature {
+    id: ID,
+    boat_id: String,
+    feature: String
+}
